@@ -3,7 +3,9 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.composeAsync = exports.pipeAsync = void 0;
+exports.mapAllAsync = exports.composeAsync = exports.pipeAsync = void 0;
+
+var _ramda = require("ramda");
 
 var pipeAsync = function pipeAsync() {
   var fns = Array.prototype.slice.call(arguments, 0);
@@ -26,3 +28,7 @@ var composeAsync = function composeAsync() {
 };
 
 exports.composeAsync = composeAsync;
+var mapAllAsync = (0, _ramda.curry)(function mapAllAsync(transformer, collection) {
+  return Promise.all((0, _ramda.map)(transformer, collection));
+});
+exports.mapAllAsync = mapAllAsync;

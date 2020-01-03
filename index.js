@@ -1,3 +1,5 @@
+import { curry, map } from 'ramda';
+
 export const pipeAsync = function pipeAsync() {
   const fns = Array.prototype.slice.call(arguments, 0);
 
@@ -17,3 +19,7 @@ export const composeAsync = function composeAsync() {
     }, Promise.resolve(initial));
   };
 };
+
+export const mapAllAsync = curry(function mapAllAsync(transformer, collection) {
+  return Promise.all(map(transformer, collection));
+});

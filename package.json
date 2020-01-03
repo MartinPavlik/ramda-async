@@ -1,9 +1,10 @@
 {
   "name": "ramda-async",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Async versions of Ramda's pipe and compose functions",
   "main": "dist/index.js",
   "scripts": {
+    "test": "jest .",
     "build": "babel index.js -d dist"
   },
   "repository": {
@@ -23,10 +24,14 @@
     "url": "https://github.com/MartinPavlik/ramda-async/issues"
   },
   "homepage": "https://github.com/MartinPavlik/ramda-async#readme",
-  "peerDependencies": {},
+  "peerDependencies": {
+    "ramda": "^0.26.1"
+  },
   "devDependencies": {
     "@babel/cli": "^7.7.7",
     "@babel/core": "^7.7.7",
-    "@babel/preset-env": "^7.7.7"
+    "@babel/preset-env": "^7.7.7",
+    "jest": "^24.9.0",
+    "ramda": "^0.26.1"
   }
 }
