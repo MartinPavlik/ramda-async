@@ -8,7 +8,7 @@ import { pipeAsync, mapAllAsync } from 'ramda-async';
 import { reduce, map, prop } from 'ramda';
 
 pipeAsync(
-  // string -> Promise([fetchPromise])
+  // [string] -> Promise([fetchPromise])
   mapAllAsync(fetch),
   // Promise([fetchPromise]) -> Promise([object])
   mapAllAsync(r => r.json()),
