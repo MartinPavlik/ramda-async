@@ -8,9 +8,9 @@ import { pipeAsync, mapAllAsync } from 'ramda-async';
 import { reduce, map, prop } from 'ramda';
 
 pipeAsync(
-  // [string] -> Promise([fetchPromise])
+  // [string] -> Promise([response])
   mapAllAsync(fetch),
-  // Promise([fetchPromise]) -> Promise([object])
+  // Promise([response]) -> Promise([object])
   mapAllAsync(r => r.json()),
   // Promise([object]) -> Promise([number])
   map(prop('total_count')),
