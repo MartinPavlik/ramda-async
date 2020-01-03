@@ -1,0 +1,32 @@
+{
+  "name": "ramda-async",
+  "version": "0.1.1",
+  "description": "Async versions of Ramda's pipe and compose functions",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel index.js -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MartinPavlik/ramda-async.git"
+  },
+  "keywords": [
+    "ramda",
+    "async",
+    "pipe",
+    "compose",
+    "composition"
+  ],
+  "author": "Martin Pavlik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MartinPavlik/ramda-async/issues"
+  },
+  "homepage": "https://github.com/MartinPavlik/ramda-async#readme",
+  "peerDependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7"
+  }
+}
