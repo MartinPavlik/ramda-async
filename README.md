@@ -1,6 +1,10 @@
 # ramda-async
 Async versions of Ramda's pipe and compose functions
 
+## Install
+```
+npm install ramda-async
+```
 
 ## Example usage
 ```js
