@@ -20,9 +20,9 @@ pipeAsync(
   map(r => r.json()),
   // Promise<object>[] -> Promise<object[]>
   traversePromises,
-  // Promise([object]) -> Promise([number])
+  // Promise<object[]> -> Promise<number[]>
   map(prop('total_count')),
-  // Promise([number]) -> Promise<number>
+  // Promise<number[]> -> Promise<number>
   reduce((r, c) => r + c , 0),
 )([
   "https://api.github.com/search/repositories?q=ramda",
