@@ -52,7 +52,7 @@ function pipeAsync() {
  * @since 1.0.0
  */
 const traversePromises = <A>(arrayOfPromises: Promise<A>[]): Promise<A[]> =>
-  Promise.all(arrayOfPromises)
+  Promise.all(arrayOfPromises);
 
 /**
  * @deprecated I have no idea how to type this function, any help appreciated
