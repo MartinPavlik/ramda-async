@@ -1,3 +1,4 @@
+/// <reference types="ts-toolbelt" />
 /**
  * Performs left-to-right function composition and automatically lifts the initial value to a promise.
  */
@@ -13,8 +14,12 @@ declare function pipeAsync<A, B, C, D, E, F, G>(ab: (a: A) => B | Promise<B>, bc
  */
 declare const traversePromises: <A>(arrayOfPromises: Promise<A>[]) => Promise<A[]>;
 /**
- * @deprecated
+ * @deprecated I have no idea how to type this function, any help appreciated
  */
 declare function composeAsync(): (initial: any) => any;
-export { pipeAsync, composeAsync, traversePromises };
+/**
+ * @deprecated use traversePromises instead
+ */
+declare const mapAllAsync: import("Function/Curry").Curry<(<A>(transformer: (a: A) => Promise<A>, collection: A[]) => Promise<A[]>)>;
+export { pipeAsync, composeAsync, traversePromises, mapAllAsync };
 //# sourceMappingURL=index.d.ts.map

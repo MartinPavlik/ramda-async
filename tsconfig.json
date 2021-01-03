@@ -17,7 +17,7 @@
   "exclude": [
     "node_modules",
     "dist",
-    "index.test.ts "
+    "index.test.ts"
   ],
   "include": [
     "**/*.ts",

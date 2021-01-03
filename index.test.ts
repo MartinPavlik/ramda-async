@@ -1,5 +1,5 @@
-import { pipeAsync, traversePromises } from "./index"
-import { map, sum } from 'ramda'
+import { pipeAsync, traversePromises, mapAllAsync, composeAsync } from "./index"
+import { map, sum, flatten } from 'ramda'
 
 describe('pipeAsync', () => {
   it('comsposes the function from left to right', async () => {
@@ -45,3 +45,59 @@ describe('traversePromises', () => {
     ).toEqual([3, 5])
   })
 })
+
+// Deprecated
+describe('mapAllAsync', () => {
+  it('should map all the collection and wrap the result with Promise.all', () => {
+    const fA = (x: number) => Promise.resolve(x + 2);
+    expect(
+      mapAllAsync(
+        fA
+      )([1, 2])
+    ).resolves.toEqual([3, 4])
+  });
+});
+
+// Deprecated
+describe('composeAsync', () => {
+  it('should compose sync functions', () => {
+    expect(
+      composeAsync(
+        flatten,
+        map(x => [x, x]),
+      )([1, 2])
+    ).resolves.toEqual([1, 1, 2, 2])
+    expect(
+      composeAsync(
+        flatten,
+        map(x => [x, x]),
+      )(Promise.resolve([1, 2]))
+    ).resolves.toEqual([1, 1, 2, 2])
+  });
+  it('should compose async functions', () => {
+    const fA = x => Promise.resolve(x * 2);
+    const fB = x => Promise.resolve(x + 3);
+    expect(
+      composeAsync(
+        fB,
+        fA,
+      )(1)
+    ).resolves.toEqual(5)
+    expect(
+      composeAsync(
+        fB,
+        fA,
+      )(Promise.resolve(1))
+    ).resolves.toEqual(5)
+  });
+  it('should compose mix of async and sync functions', () => {
+    const fA = x => Promise.resolve([x, x]);
+    expect(
+      composeAsync(
+        map(x => x * 2),
+        flatten,
+        fA,
+      )([1, 2])
+    ).resolves.toEqual([2, 4, 2, 4])
+  });
+});
