@@ -55,7 +55,7 @@ const traversePromises = <A>(arrayOfPromises: Promise<A>[]): Promise<A[]> =>
   Promise.all(arrayOfPromises)
 
 /**
- * @deprecated
+ * @deprecated I have no idea how to type this function, any help appreciated
  */
 function composeAsync() {
   const fns = Array.prototype.slice.call(arguments, 0).reverse();
@@ -68,7 +68,7 @@ function composeAsync() {
 };
 
 /**
- * @deprecated - use traversePromises instead
+ * @deprecated use traversePromises instead
  */
 const mapAllAsync = curry(function mapAllAsync_<A>(transformer: ((a: A) => Promise<A>), collection: A[]) {
   return Promise.all(map(transformer, collection));

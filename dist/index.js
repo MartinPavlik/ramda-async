@@ -21,7 +21,7 @@ var traversePromises = function (arrayOfPromises) {
 };
 exports.traversePromises = traversePromises;
 /**
- * @deprecated
+ * @deprecated I have no idea how to type this function, any help appreciated
  */
 function composeAsync() {
     var fns = Array.prototype.slice.call(arguments, 0).reverse();
@@ -34,7 +34,7 @@ function composeAsync() {
 exports.composeAsync = composeAsync;
 ;
 /**
- * @deprecated - use traversePromises instead
+ * @deprecated use traversePromises instead
  */
 var mapAllAsync = ramda_1.curry(function mapAllAsync_(transformer, collection) {
     return Promise.all(ramda_1.map(transformer, collection));
