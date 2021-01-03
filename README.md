@@ -22,7 +22,7 @@ pipeAsync(
   traversePromises,
   // Promise([object]) -> Promise([number])
   map(prop('total_count')),
-  // Promise([number]) -> number
+  // Promise([number]) -> Promise<number>
   reduce((r, c) => r + c , 0),
 )([
   "https://api.github.com/search/repositories?q=ramda",
