@@ -1,6 +1,6 @@
 {
   "name": "ramda-async",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Async versions of Ramda's pipe and compose functions",
   "main": "dist/index.js",
   "scripts": {
