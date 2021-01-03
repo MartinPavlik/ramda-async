@@ -1,0 +1,26 @@
+{
+  "files": [
+    "./index.ts",
+  ],
+  "compileOnSave": false,
+  "compilerOptions": {
+    // "composite": true,
+    "outDir": "dist/",
+    "rootDir": "./",
+    "declaration": true,
+    "declarationDir": "dist",
+    "declarationMap": true,
+    "baseUrl": ".",
+    "lib": [
+      "es2015"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "index.test.ts "
+  ],
+  "include": [
+    "**/*.ts",
+  ]
+}
