@@ -1,5 +1,5 @@
 # ramda-async
-`pipeAsync` and `traversePromises` function that play well with the rest of Ramda functions. Now also plays "okish" with TypeScript.
+Provides `pipeAsync` and `traversePromises` functions that play well with the rest of Ramda ecosystem. Now also plays "okish" with TypeScript.
 
 ## Install
 ```

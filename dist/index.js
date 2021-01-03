@@ -1,6 +1,7 @@
 "use strict";
 exports.__esModule = true;
-exports.traversePromises = exports.composeAsync = exports.pipeAsync = void 0;
+exports.mapAllAsync = exports.traversePromises = exports.composeAsync = exports.pipeAsync = void 0;
+var ramda_1 = require("ramda");
 function pipeAsync() {
     var fns = Array.prototype.slice.call(arguments, 0);
     return function composed(initial) {
@@ -32,3 +33,10 @@ function composeAsync() {
 }
 exports.composeAsync = composeAsync;
 ;
+/**
+ * @deprecated - use traversePromises instead
+ */
+var mapAllAsync = ramda_1.curry(function mapAllAsync_(transformer, collection) {
+    return Promise.all(ramda_1.map(transformer, collection));
+});
+exports.mapAllAsync = mapAllAsync;

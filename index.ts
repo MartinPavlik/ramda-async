@@ -1,3 +1,5 @@
+import { map, curry } from 'ramda'
+
 /**
  * Performs left-to-right function composition and automatically lifts the initial value to a promise.
  */
@@ -65,4 +67,11 @@ function composeAsync() {
   };
 };
 
-export { pipeAsync, composeAsync, traversePromises }
+/**
+ * @deprecated - use traversePromises instead
+ */
+const mapAllAsync = curry(function mapAllAsync_<A>(transformer: ((a: A) => Promise<A>), collection: A[]) {
+  return Promise.all(map(transformer, collection));
+});
+
+export { pipeAsync, composeAsync, traversePromises, mapAllAsync }
