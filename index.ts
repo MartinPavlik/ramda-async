@@ -36,6 +36,75 @@ function pipeAsync<A, B, C, D, E, F, G>(
   ef: (e: E) => F | Promise<F>,
   fg: (f: F) => G | Promise<G>,
 ): (a: A) => Promise<G>;
+function pipeAsync<A, B, C, D, E, F, G, H>(
+  ab: (a: A) => B | Promise<B>,
+  bc: (b: B) => C | Promise<C>,
+  cd: (c: C) => D | Promise<D>,
+  de: (d: D) => E | Promise<E>,
+  ef: (e: E) => F | Promise<F>,
+  fg: (f: F) => G | Promise<G>,
+  gh: (g: G) => H | Promise<H>,
+): (a: A) => Promise<H>;
+function pipeAsync<A, B, C, D, E, F, G, H, I>(
+  ab: (a: A) => B | Promise<B>,
+  bc: (b: B) => C | Promise<C>,
+  cd: (c: C) => D | Promise<D>,
+  de: (d: D) => E | Promise<E>,
+  ef: (e: E) => F | Promise<F>,
+  fg: (f: F) => G | Promise<G>,
+  gh: (g: G) => H | Promise<H>,
+  hi: (h: H) => I | Promise<I>,
+): (a: A) => Promise<I>;
+function pipeAsync<A, B, C, D, E, F, G, H, I, J>(
+  ab: (a: A) => B | Promise<B>,
+  bc: (b: B) => C | Promise<C>,
+  cd: (c: C) => D | Promise<D>,
+  de: (d: D) => E | Promise<E>,
+  ef: (e: E) => F | Promise<F>,
+  fg: (f: F) => G | Promise<G>,
+  gh: (g: G) => H | Promise<H>,
+  hi: (h: H) => I | Promise<I>,
+  ij: (i: I) => J | Promise<J>,
+): (a: A) => Promise<J>;
+function pipeAsync<A, B, C, D, E, F, G, H, I, J, K>(
+  ab: (a: A) => B | Promise<B>,
+  bc: (b: B) => C | Promise<C>,
+  cd: (c: C) => D | Promise<D>,
+  de: (d: D) => E | Promise<E>,
+  ef: (e: E) => F | Promise<F>,
+  fg: (f: F) => G | Promise<G>,
+  gh: (g: G) => H | Promise<H>,
+  hi: (h: H) => I | Promise<I>,
+  ij: (i: I) => J | Promise<J>,
+  jk: (j: J) => K | Promise<K>,
+): (a: A) => Promise<K>;
+function pipeAsync<A, B, C, D, E, F, G, H, I, J, K, M>(
+  ab: (a: A) => B | Promise<B>,
+  bc: (b: B) => C | Promise<C>,
+  cd: (c: C) => D | Promise<D>,
+  de: (d: D) => E | Promise<E>,
+  ef: (e: E) => F | Promise<F>,
+  fg: (f: F) => G | Promise<G>,
+  gh: (g: G) => H | Promise<H>,
+  hi: (h: H) => I | Promise<I>,
+  ij: (i: I) => J | Promise<J>,
+  jk: (j: J) => K | Promise<K>,
+  km: (k: K) => M | Promise<M>,
+): (a: A) => Promise<M>;
+function pipeAsync<A, B, C, D, E, F, G, H, I, J, K, M, N>(
+  ab: (a: A) => B | Promise<B>,
+  bc: (b: B) => C | Promise<C>,
+  cd: (c: C) => D | Promise<D>,
+  de: (d: D) => E | Promise<E>,
+  ef: (e: E) => F | Promise<F>,
+  fg: (f: F) => G | Promise<G>,
+  gh: (g: G) => H | Promise<H>,
+  hi: (h: H) => I | Promise<I>,
+  ij: (i: I) => J | Promise<J>,
+  jk: (j: J) => K | Promise<K>,
+  km: (k: K) => M | Promise<M>,
+  mn: (m: M) => N | Promise<N>,
+): (a: A) => Promise<N>;
 
 function pipeAsync() {
   const fns = Array.prototype.slice.call(arguments, 0);
