@@ -45,3 +45,9 @@ Wraps the array of promises with `Promise.all`, so it traverses the types like t
 ```ts
 declare function traverse<A>(arrayOfPromises: Promise<A>[]): Promise<A[]>
 ```
+
+
+
+## Sponsor
+
+This package is sponsored by [ScreenManager - digital signage platform](https://screenmanager.tech/).
